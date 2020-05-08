@@ -1,1 +1,31 @@
-<p>quote works!</p>
+<header class="Intro-header">
+    <div class="navbar navbar-expand-lg navbar-dark fixed-top">
+    </div>
+
+    <!--Intro-->
+    <section class="container flex-center">
+        <div class=" display-flex align-items-center content-height w-100">
+            <div class="row flex-center">
+                <div class="col-md-6 text-center text-md-left">
+                    <h2 style="text-align: left;">QUOTES</h2>
+                    <div class="col-md-5 content text-left">
+                        <div *ngFor="let quote of quotes; let i = index" style="font-size: medium;">
+                            <div>
+                                <div style="display:inline; font-weight: bolder; color: darkmagenta; letter-spacing: 1px">
+                                    {{quote.entryDate|date}}</div> <br>
+                                <div style="display:inline" appHighlight *ngIf="highestUpvote()==quote.upvotes && quote.upvotes>0">
+                                </div>
+                                <div style="display:inline" appHighlight *ngIf="highestUpvote()!==quote.upvotes || quote.upvotes===0">
+                                    {{quote.quote}} <br>
+                                </div>&nbsp;
+
+                                <app-quote-details [quote]="quote"></app-quote-details>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
