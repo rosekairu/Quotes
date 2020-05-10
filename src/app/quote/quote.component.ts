@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Quotes } from '../quotes';
+import { DatePipe } from '../../../node_modules/@angular/common';
 
 @Component({
   selector: 'app-quote',
@@ -7,6 +8,9 @@ import { Quotes } from '../quotes';
   styleUrls: ['./quote.component.css'],
 })
 export class QuoteComponent implements OnInit {
+  @Input() quote;
+  Quote;
+  @Output() isComplete = new EventEmitter<boolean>();
   quotes = [
     new Quotes(
       'Martin Luther King jr',
@@ -34,12 +38,8 @@ export class QuoteComponent implements OnInit {
     this.quotes.unshift(quote);
   }
 
-  upVote(i) {
-    this.quotes[i].upvotes++;
-  }
-
-  downVote(i) {
-    this.quotes[i].downvotes++;
+  quoteDelete(complete: boolean) {
+    this.isComplete.emit(complete);
   }
 
   delQuote(isComplete, i) {
@@ -51,6 +51,17 @@ export class QuoteComponent implements OnInit {
         this.quotes.splice(i, 1);
       }
     }
+  }
+
+  upvotes = 0;
+  downvotes = 0;
+
+  upVote(i) {
+    this.quotes[i].upvotes += 1;
+  }
+
+  downVote(i) {
+    this.quotes[i].downvotes += 1;
   }
 
   prevNum: number;
