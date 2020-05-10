@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Quotes } from '../quotes';
-import { DatePipe } from '../../../node_modules/@angular/common';
 
 @Component({
   selector: 'app-quote',
