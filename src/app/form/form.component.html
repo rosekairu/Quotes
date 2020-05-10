@@ -1,47 +1,64 @@
-<form (ngSubmit)="submitQuote()" class="card-body" style="margin-top: 0.5in;">
-    <div class="text-center">
-
-        <h3 class="white-text"> Add Quote <i class="fas fa-quote-right"></i>
-        </h3>
-        <hr class="hr-light">
+<form #quoteForm="ngForm" (ngSubmit)="submitQuote()" class="card-body">
+    <div class="form-group">
+        <h3 class="text">Add Quote</h3>
+        <hr class="hr-light" />
     </div>
 
     <!--Body-->
 
-    <div class="md-form">
-        <label for="form3">Person's name</label>
+    <div class="form-group">
+        <span class="material-icons">
+      person_outline
+    </span>
+        <label for="publisher">Person's name</label>
         <i class="fas fa-user prefix white-text"></i>
-        <input type="text" id="form3" class="form-control " name="publisher" [(ngModel)]="quoteEditor" #name='ngModel'>
-
+        <input type="text" id="publisher" class="form-control" name="publisher" [(ngModel)]="newQuote.publisher" #publisher="ngModel" required />
     </div>
-    <div class="md-form">
-        <label for="form2">Quotes</label>
-        <i class="fas fa-quote-left prefix white-text"></i>
-        <input type="text" id="form2" class="form-control" name="quote" [(ngModel)]="quoteWords">
-
+    <div [hidden]="publisher.valid || publisher.pristine" class="validations">
+        <p>Name is required</p>
     </div>
 
-    <div class="md-form">
-        <label for="form4">Author</label>
-        <i class="fas fa-user prefix white-text"></i>
-        <input type="text" id="form4" class="form-control" name="author" [(ngModel)]="quoteAuthor" #author='ngModel'>
-
+    <div class="form-group">
+        <span class="material-icons">
+      format_quote
+    </span>
+        <label for="validationForm2">Quotes</label><i class="fas fa-quote-left prefix white-text"></i>
+        <input type="text" id="validationForm2" class="form-control" name="quote" [(ngModel)]="newQuote.quote" #quote="ngModel" required />
     </div>
-    <div class="md-form">
-        <label class=" white-text" for="form5">Quote Date</label>
-        <i class="far fa-clock prefix white-text"></i>
-        <input type='date' id="form5" class="form-control white-text" name="entryDate" [(ngModel)]="quoteDate">
-
+    <div [hidden]="quote.valid || quote.pristine" class="validations">
+        <p>A quote is required</p>
     </div>
+
+    <div class="form-group">
+        <span class="material-icons">
+      person_outline
+    </span>
+        <label for="validationForm4">Author</label><i class="fas fa-user prefix white-text"></i>
+        <input type="text" id="validationForm4" class="form-control" name="author" [(ngModel)]="newQuote.author" #author="ngModel" required />
+    </div>
+    <div [hidden]="author.valid || author.pristine" class="validations">
+        <p>An Author is required</p>
+    </div>
+
+    <div class="form-group" style="width: 50%;">
+        <span class="material-icons">
+      date_range</span> <label class="white-text" for="form5">Quote Date</label>
+        <input type="date" id="validationForm5" class="form-control white-text" name="entryDate" [(ngModel)]="newQuote.entryDate" #date="ngModel" required />
+    </div> <br>
+    <div [hidden]="date.valid || date.pristine" class="validations">
+        <p>Select A Date</p>
+    </div>
+
     <div class="text-center">
-        <button type="submit" mdbBtn color="indigo" class="waves-light btn btn-info" mdbWavesEffect>Post Quote</button>
-        <hr class="hr-light mb-3 mt-4">
+        <button type="submit" class="btn btn-primary" [disabled]="!quoteForm.valid">
+      Post Quote
+    </button>
+        <hr class="hr-light mb-3 mt-4" />
+        <div class="d-flex justify-content-between">
 
-        <div class="inline-ul text-center d-flex justify-content-center">
-            <a class="icons-sm tw-ic px-4" href="#"><i class="fab fa-twitter white-text"></i></a>
-            <a class="icons-sm li-ic px-4"><i class="fab fa-linkedin-in white-text" href="#">
-        </i></a>
-            <a class="icons-sm ins-ic px-4" href="#"><i class="fab fa-github"></i></a>
+            <a class="animate" href="#"><img src="assets/social/linkedIn.png" alt="linkedIn" /></a>
+            <a class="animate" href="#"><img src="assets/social/twitter.png" alt="twitter" /></a>
+            <a class="animate" href="#"><img src="assets/social/github.png" alt="github" /></a>
         </div>
     </div>
 </form>
