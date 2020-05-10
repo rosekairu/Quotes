@@ -37,11 +37,9 @@ export class QuoteComponent implements OnInit {
     quote.entryDate = new Date(quote.entryDate);
     this.quotes.unshift(quote);
   }
-
   quoteDelete(complete: boolean) {
     this.isComplete.emit(complete);
   }
-
   delQuote(isComplete, i) {
     if (isComplete) {
       let toDelete = confirm(
