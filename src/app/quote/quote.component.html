@@ -1,6 +1,6 @@
-<div class="jumbotron" style="background-image: url(assets/bg.jpg); background-repeat: no-repeat; background-size: cover;">
+<div class="jumbotron" style="background-image: url(assets/imgs/dark.jpg); background-repeat: no-repeat; background-size: cover;">
     <h3 class="container" style="color: greenyellow; font-size: 27px;">FAMOUS QUOTES</h3>
-    <div class="row" style="width: 30rem;">
+    <div class="row" style="width: 30rem; color: lightcyan;">
         <img class="col-md-4">
         <div *ngFor="let quote of quotes; let i = index" style="font-size: medium;">
             <p appHighlight *ngIf="highestUpvote() === quote.upvotes && quote.upvotes > 0">
@@ -13,13 +13,13 @@
 
             <div class="row">
                 <div class="col-md-3">
-                    <button type="button" class="btn btn-outline-primary" (click)="upVote(i)">{{quote[i]}}&nbsp;<span
+                    <button type="button" class="btn btn-outline-primary" (click)="upVotes(i)">{{quote[i]}}&nbsp;<span
               class="material-icons">
               thumb_up
             </span></button>&nbsp;
                 </div>
                 <div class="col-md-3">
-                    <button class="btn btn-outline-secondary" (click)="downVote(i)">{{quote[i]}}
+                    <button class="btn btn-outline-secondary" (click)="downVotes(i)">{{quote[i]}}
             &nbsp;<span class="material-icons">
               thumb_down
             </span></button>&nbsp;
