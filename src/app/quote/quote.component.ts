@@ -7,10 +7,9 @@ import { Quotes } from '../quotes';
   styleUrls: ['./quote.component.css'],
 })
 export class QuoteComponent implements OnInit {
-  @Input() quote;
-  Quote;
+  @Input() quote: Quotes;
   @Output() isComplete = new EventEmitter<boolean>();
-  quotes: Quotes[] = [
+  quotes = [
     new Quotes(
       'Martin Luther King jr',
       'The time is always right to do what is right.',
@@ -30,11 +29,11 @@ export class QuoteComponent implements OnInit {
       new Date(2004, 5, 23)
     ),
   ];
-  addNewQuote(quote) {
+  addNewQuote(quotes) {
     let quoteLength = this.quotes.length;
-    quote.id = quoteLength + 1;
-    quote.entryDate = new Date(quote.entryDate);
-    this.quotes.unshift(quote);
+    quotes.id = quoteLength + 1;
+    quotes.entryDate = new Date(quotes.entryDate);
+    this.quotes.unshift(quotes);
   }
   quoteDelete(complete: boolean) {
     this.isComplete.emit(complete);
