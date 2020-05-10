@@ -11,7 +11,7 @@ export class FormComponent implements OnInit {
   newQuote = new Quotes('', '', '', new Date());
   @Output() addQuote = new EventEmitter<Quotes>();
 
-  submitQuote(NgForm) {
+  submitQuote(newQuote: NgForm) {
     this.addQuote.emit(this.newQuote);
     this.newQuote = new Quotes('', '', '', new Date());
   }
