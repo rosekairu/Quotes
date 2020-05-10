@@ -7,39 +7,50 @@ import { Quotes } from '../quotes';
   styleUrls: ['./quote.component.css'],
 })
 export class QuoteComponent implements OnInit {
-  quotes: Quotes[] = [
+  quotes = [
     new Quotes(
-      'MLK jr',
       'Martin Luther King jr',
-      'The time is always right to do what is right.'
+      'The time is always right to do what is right.',
+      'MLK jr',
+      new Date(1989, 3, 8)
     ),
     new Quotes(
-      'Winston',
       'Winston Churchill',
-      'Success is not final, failure is not fatal: it is the courage to continue that counts.'
+      'Success is not final, failure is not fatal: it is the courage to continue that counts.',
+      'Winston',
+      new Date(1989, 5, 10)
     ),
     new Quotes(
-      'Maya',
       'Maya Angelou',
-      "Try to be a rainbow in someone else's cloud."
+      'Try to be a rainbow in someone elses cloud.',
+      'Maya',
+      new Date(2004, 5, 23)
     ),
   ];
   addNewQuote(quote) {
     let quoteLength = this.quotes.length;
     quote.id = quoteLength + 1;
     quote.entryDate = new Date(quote.entryDate);
-    this.quotes.push(quote);
+    this.quotes.unshift(quote);
   }
-  upvote(i) {
+
+  upVote(i) {
     this.quotes[i].upvotes++;
   }
 
-  downvote(i) {
+  downVote(i) {
     this.quotes[i].downvotes++;
   }
 
-  delQuote(i) {
-    this.quotes.splice(i, 1);
+  delQuote(isComplete, i) {
+    if (isComplete) {
+      let toDelete = confirm(
+        `Are you sure you want to delete ${this.quotes[i].quote}?`
+      );
+      if (toDelete) {
+        this.quotes.splice(i, 1);
+      }
+    }
   }
 
   prevNum: number;
