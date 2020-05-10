@@ -13,9 +13,9 @@
         <label for="publisher">Person's name</label>
         <i class="fas fa-user prefix white-text"></i>
         <input type="text" id="publisher" class="form-control" name="publisher" [(ngModel)]="newQuote.publisher" #publisher="ngModel" required />
-    </div>
-    <div [hidden]="publisher.valid || publisher.pristine" class="validations">
-        <p>Name is required</p>
+        <div [hidden]="publisher.valid || publisher.pristine" class="validations">
+            <p>Name is required</p>
+        </div>
     </div>
 
     <div class="form-group">
@@ -24,9 +24,9 @@
     </span>
         <label for="validationForm2">Quotes</label><i class="fas fa-quote-left prefix white-text"></i>
         <input type="text" id="validationForm2" class="form-control" name="quote" [(ngModel)]="newQuote.quote" #quote="ngModel" required />
-    </div>
-    <div [hidden]="quote.valid || quote.pristine" class="validations">
-        <p>A quote is required</p>
+        <div [hidden]="quote.valid || quote.pristine" class="validations">
+            <p>A quote is required</p>
+        </div>
     </div>
 
     <div class="form-group">
@@ -35,9 +35,9 @@
     </span>
         <label for="validationForm4">Author</label><i class="fas fa-user prefix white-text"></i>
         <input type="text" id="validationForm4" class="form-control" name="author" [(ngModel)]="newQuote.author" #author="ngModel" required />
-    </div>
-    <div [hidden]="author.valid || author.pristine" class="validations">
-        <p>Author is required</p>
+        <div [hidden]="author.valid || author.pristine" class="validations">
+            <p>Author is required</p>
+        </div>
     </div>
 
     <!--div class="form-group" style="width: 50%;">
