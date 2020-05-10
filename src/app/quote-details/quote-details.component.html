@@ -1,4 +1,4 @@
-<div class="card-body">
+<div class="details">
 
     <p>Author: {{quote.author}}</p>
     <p>Quote: {{quote.quote}}</p>
@@ -12,7 +12,7 @@
       ">
       {{ quote.entryDate | date }}
     </span> </p>
-    <span style="color: dimgrey;"> This Quote was Posted {{quote.entryDate|dateCount}} days ago</span> &nbsp;
+    <span style="color: cornflowerblue;"> This Quote was Posted {{quote.entryDate|dateCount}} days ago</span> &nbsp;
 
     <button class="button" class="btn btn-outline-danger" (click)='quoteDelete(true)'><span class="material-icons">
       delete
