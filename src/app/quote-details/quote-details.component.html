@@ -4,6 +4,13 @@
     <p>Quote: {{quote.quote}}</p>
     <p>Publisher:{{quote.publisher}}</p>
 
-    <p>Entry Date:{{quote.entryDate|dateCount}}</p>
-    <span> This Quote was Posted {{quote.entryDate|dateCount}} days ago</span> &nbsp;
+    <p>Entry Date:&nbsp; <span style="
+        display: inline;
+        font-weight: bolder;
+        color: darkmagenta;
+        letter-spacing: 1px;
+      ">
+      {{ quote.entryDate | date }}
+    </span> </p>
+    <span style="color: dimgrey;"> This Quote was Posted {{quote.entryDate|dateCount}} days ago</span> &nbsp;
 </div>
