@@ -1,7 +1,9 @@
 <div class="card-body">
 
     <p>Author: {{quote.author}}</p>
-    <p>Publisher:{{quote.name}}</p>
-    <p>Upvotes:{{quote.upvotes}}</p>
-    <p>Downvotes:{{quote.downvotes}}</p>
+    <p>Quote: {{quote.quote}}</p>
+    <p>Publisher:{{quote.publisher}}</p>
+
+    <p>Entry Date:{{quote.entryDate|dateCount}}</p>
+    <span> This Quote was Posted {{quote.entryDate|dateCount}} days ago</span> &nbsp;
 </div>
