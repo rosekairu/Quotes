@@ -11,7 +11,7 @@ export class QuoteComponent implements OnInit {
   @Input() quote;
   Quote;
   @Output() isComplete = new EventEmitter<boolean>();
-  quotes = [
+  quotes: Quotes[] = [
     new Quotes(
       'Martin Luther King jr',
       'The time is always right to do what is right.',
