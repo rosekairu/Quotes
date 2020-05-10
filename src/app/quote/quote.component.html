@@ -12,18 +12,17 @@
                             <p appHighlight *ngIf="highestUpvote() !== quote.upvotes || quote.upvotes === 0">
                                 {{ quote.quote }}
                             </p>
-                            <app-quote-details [quote]="quote"></app-quote-details>
+                            <app-quote-details *ngIf='quote.quote' [quote]="quote" (isComplete)='delQuote($event,i)'>
+                            </app-quote-details>
                             <button type="button" class="btn btn-outline-primary" (click)="upVote(i)">&nbsp;<span
                   class="material-icons">
                   thumb_up
                 </span></button>&nbsp;
-                            <button type="button" class="btn btn-outline-secondary" (click)="downVote(i)">&nbsp;<span
-                  class="material-icons">
+                            <button class="btn btn-outline-secondary" (click)="downVote(i)">
+                &nbsp;<span class="material-icons">
                   thumb_down
                 </span></button>&nbsp;
-                            <button class="button" class="btn btn-outline-danger"><span class="material-icons">
-                  delete
-                </span></button>
+
                         </div>
                         <br />
                     </div>
