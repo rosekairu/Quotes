@@ -1,4 +1,4 @@
-<form (ngSubmit)="submitQuote();quoteForm.resetForm({})" #quoteForm="ngForm" class="card-body">
+<form (ngSubmit)="submitQuote();quoteForm.resetForm({})" #quoteForm="ngForm">
     <div class="form-group">
         <h3 class="text">Add Quote</h3>
         <hr class="hr-light" />
@@ -10,8 +10,7 @@
         <span class="material-icons">
       person_outline
     </span>
-        <label for="publisher">Person's name</label>
-        <i class="fas fa-user prefix white-text"></i>
+        <label for="publisher">Person's name </label>
         <input type="text" id="publisher" class="form-control" name="publisher" [(ngModel)]="newQuote.publisher" #publisher="ngModel" required />
         <div [hidden]="publisher.valid || publisher.pristine" class="validations">
             <p>Name is required</p>
@@ -22,8 +21,8 @@
         <span class="material-icons">
       format_quote
     </span>
-        <label for="validationForm2">Quotes</label><i class="fas fa-quote-left prefix white-text"></i>
-        <input type="text" id="validationForm2" class="form-control" name="quote" [(ngModel)]="newQuote.quote" #quote="ngModel" required />
+        <label for="quote">Quotes</label>
+        <input type="text" id="quote" class="form-control" name="quote" [(ngModel)]="newQuote.quote" #quote="ngModel" required />
         <div [hidden]="quote.valid || quote.pristine" class="validations">
             <p>A quote is required</p>
         </div>
@@ -33,21 +32,12 @@
         <span class="material-icons">
       person_outline
     </span>
-        <label for="validationForm4">Author</label><i class="fas fa-user prefix white-text"></i>
-        <input type="text" id="validationForm4" class="form-control" name="author" [(ngModel)]="newQuote.author" #author="ngModel" required />
+        <label for="author">Author</label>
+        <input type="text" id="author" class="form-control" name="author" [(ngModel)]="newQuote.author" #author="ngModel" required />
         <div [hidden]="author.valid || author.pristine" class="validations">
             <p>Author is required</p>
         </div>
     </div>
-
-    <!--div class="form-group" style="width: 50%;">
-        <span class="material-icons">
-      date_range</span> <label class="white-text" for="form5">Quote Date</label>
-        <input type="date" id="validationForm5" class="form-control white-text" name="entryDate" [(ngModel)]="newQuote.entryDate" #date="ngModel" required />
-    </div> <br>
-    <div [hidden]="date.valid || date.pristine" class="validations">
-        <p>Select A Date</p>
-    </div-->
 
     <div class="text-center">
         <button type="submit" class="btn btn-primary" [disabled]="!quoteForm.form.valid">
