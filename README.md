@@ -1,3 +1,5 @@
+[![codebeat badge](https://codebeat.co/badges/a72ff64e-1bbe-4e7a-bf31-96dc6896f227)](https://codebeat.co/projects/github-com-rosekairu-quotes-master)
+
 # Quotes
 
 An application where users can create quotes and have those quotes voted on. Upvote for inspirational or Downvote when terrible.
