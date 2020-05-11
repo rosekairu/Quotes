@@ -1,27 +1,37 @@
 # Quotes
 
+An application where users can create quotes and have those quotes voted on. Upvote for inspirational or Downvote when terrible.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
+
+Current version date 2020 #### By **Rose Kairu**
+
+## Description
+
+User can add, vote and delete quote. For adding new quote there is form with required input fields. To vote user can vote liked quotes and unliked votes using buttons with thumbup and thumbdown.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Setup/Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Internet connection.
+Angular installation.
+Node Installation.
+Clone [https://github.com/rosekairu/Quotes]
+Go inside the folder that contains the project.
+Run ng serve for a dev server. Navigate to a browser and [http://localhost:4200/].
 
-## Build
+Otherwise check link deployed on the page: [https://github.com/rosekairu/Quotes]
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Technologies Used
 
-## Running unit tests
+Quotes website was developed using HTML5, CSS, Bootstrap CSS, Angular and Typescript.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Support and contact details
 
-## Running end-to-end tests
+Incase of any issues arising from using the Ghanaian Akan Name Generator website kindly reach out to me via email at rosekairu@gmail.com
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+### [MIT License](https://github.com/rosekairu/Quotes/blob/master/LICENSE)
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Copyright (c) 2020 **Rose Kairu**
