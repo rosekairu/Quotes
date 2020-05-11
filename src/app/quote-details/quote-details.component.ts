@@ -9,21 +9,10 @@ import { Quotes } from '../quotes';
 export class QuoteDetailsComponent implements OnInit {
   @Input() quote: Quotes;
 
-  upvotes = 0;
-  downvotes = 0;
-
   @Output() isComplete = new EventEmitter<boolean>();
 
   quoteDelete(complete: boolean) {
     this.isComplete.emit(complete);
-  }
-
-  upVotes() {
-    this.quote.upvotes++;
-  }
-
-  downVotes() {
-    this.quote.downvotes++;
   }
 
   constructor() {}
