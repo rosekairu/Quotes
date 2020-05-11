@@ -5,7 +5,7 @@
 An application where users can create quotes and have those quotes voted on. Upvote for inspirational or Downvote when terrible.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
-Current version date 2020 #### By **Rose Kairu**
+Current version date 2020 ## By **Rose Kairu**
 
 ## Description
 
