@@ -1,6 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Quotes } from '../quotes';
-//import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -17,5 +16,5 @@ export class FormComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 }

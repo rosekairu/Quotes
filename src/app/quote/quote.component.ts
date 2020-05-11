@@ -8,7 +8,9 @@ import { Quotes } from '../quotes';
 })
 export class QuoteComponent implements OnInit {
   @Input() quote: Quotes;
+
   @Output() isComplete = new EventEmitter<boolean>();
+
   quotes = [
     new Quotes(
       'Martin Luther King jr',
@@ -22,18 +24,12 @@ export class QuoteComponent implements OnInit {
       'Winston',
       new Date(1989, 5, 10)
     ),
-    new Quotes(
-      'Maya Angelou',
-      'Try to be a rainbow in someone elses cloud.',
-      'Maya',
-      new Date(2004, 5, 23)
-    ),
   ];
-  addNewQuote(quotes) {
+  addNewQuote(quote) {
     let quoteLength = this.quotes.length;
-    quotes.id = quoteLength + 1;
-    quotes.entryDate = new Date(quotes.entryDate);
-    this.quotes.unshift(quotes);
+    quote.id = quoteLength + 1;
+    quote.entryDate = new Date(quote.entryDate);
+    this.quotes.unshift(quote);
   }
   quoteDelete(complete: boolean) {
     this.isComplete.emit(complete);

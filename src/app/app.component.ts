@@ -6,6 +6,4 @@ import { Quotes } from './quotes';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
-  title = 'Quotes';
-}
+export class AppComponent {}

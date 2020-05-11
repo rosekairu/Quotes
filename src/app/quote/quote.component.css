@@ -1,3 +1,15 @@
-.card-columns {
-    column-count: 4;
+.jumbotron {
+    background-image: url('../../assets/imgs/bg_4.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.row1 {
+    width: 50rem;
+    color: lightcyan;
+}
+
+h3 {
+    color: greenyellow;
+    font-size: 27px;
 }
