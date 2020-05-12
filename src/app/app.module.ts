@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 //import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +12,8 @@ import { DateCountPipe } from './date-count.pipe';
 import { HighlightDirective } from './highlight.directive';
 import { NavbarComponent } from './navbar/navbar.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
+import { TimePassPipe } from './time-pass.pipe';
+//import { TimeAgoPipe } from 'time-ago-pipe';
 
 @NgModule({
   declarations: [
@@ -21,8 +24,10 @@ import { QuoteFormComponent } from './quote-form/quote-form.component';
     HighlightDirective,
     NavbarComponent,
     QuoteFormComponent,
+    TimePassPipe,
+    //TimeAgoPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

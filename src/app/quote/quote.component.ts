@@ -9,12 +9,14 @@ import { Quotes } from '../quotes';
 export class QuoteComponent implements OnInit {
   quotes: Quotes[] = [
     new Quotes(
+      0,
       'Martin Luther King jr',
       'The time is always right to do what is right.',
       'MLK jr',
       new Date(1989, 3, 8)
     ),
     new Quotes(
+      0,
       'Winston Churchill',
       'Success is not final, failure is not fatal: it is the courage to continue that counts.',
       'Winston',
@@ -34,6 +36,11 @@ export class QuoteComponent implements OnInit {
 
   upvotes = 0;
   downvotes = 0;
+  timePass = 0;
+
+  timepass() {
+    this.timePass = 0;
+  }
 
   highestUpvote() {
     this.prevNum = 0;

@@ -3,7 +3,6 @@
     <hr class="hr-light mb-3 mt-4" />
 
     <form (ngSubmit)='submitQuote();quoteForm.resetForm({})' #quoteForm='ngForm'>
-
         <!--Body-->
 
         <div class="form-group">
@@ -11,7 +10,7 @@
         person_outline
       </span>
             <label for="publisher">Publisher's name </label>
-            <input type="text" id="publisher" class="form-control" name="publisher" [(ngModel)]="newQuote.name" #publisher="ngModel" required>
+            <input type="text" id="publisher" class="form-control" name="name" [(ngModel)]="newQuote.name" #publisher="ngModel" required>
             <div [hidden]="publisher.valid || publisher.pristine" class="validations">
                 <p>Name is required</p>
             </div>
@@ -37,11 +36,6 @@
             <div [hidden]="author.valid || author.pristine" class="validations">
                 <p>Author is required</p>
             </div>
-        </div>
-
-        <div class="form-group">
-            <label for="date"> Date </label> <br>
-            <input id="date" [(ngModel)]="newQuote.entryDate" name="entryDate" #entryDate="ngModel">
         </div>
 
         <div class="text-center">

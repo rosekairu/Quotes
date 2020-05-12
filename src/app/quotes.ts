@@ -3,6 +3,7 @@ export class Quotes {
   public downvotes: number;
 
   constructor(
+    public id: Number,
     public author: string,
     public quote: string,
     public name: string,
