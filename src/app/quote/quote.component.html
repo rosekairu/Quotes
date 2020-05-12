@@ -1,40 +1,43 @@
 <div class="jumbotron">
-    <h3 class="container">FAMOUS QUOTES</h3>
+    <h3>FAMOUS QUOTES</h3> &nbsp;
+
     <div class="row1">
-        <img class="col-md-6">
-        <div *ngFor="let quote of quotes; let i = index" style="font-size: medium;">
-            <p appHighlight *ngIf="highestUpvote() === quote.upvotes && quote.upvotes > 0">
-                {{quote.quote}} </p>
-            <p *ngIf="highestUpvote() !== quote.upvotes || quote.upvotes === 0">
-                {{ quote.quote }}</p>
+        <div class="col-md-6">
+            <div *ngFor="let quote of quotes; let i = index" style="font-size: medium;">
 
-            <app-quote-details [quote]="quote" (isComplete)='delQuote($event,i)'>
-            </app-quote-details>
+                <p appHighlight *ngIf="highestUpvote() === quote.upvotes && quote.upvotes > 0">
+                    {{quote.quote}} </p>
+                <p *ngIf="highestUpvote() !== quote.upvotes || quote.upvotes === 0">
+                    {{ quote.quote }}</p>
 
-            <div class="row">
-                <div class="column-md-5">
-                    <button type="button" class="btn btn-outline-primary" (click)="upVotes(i)">{{quotes[i].upvotes}}
-            &nbsp;<span class="material-icons">
-              thumb_up
-            </span></button> &nbsp; &nbsp; &nbsp;
-                </div>
+                <app-quote-details [quote]="quote" (isComplete)='delQuote($event,i)'>
+                </app-quote-details>
 
-                <div class="column-md-3">
-                    <button type="button" class="btn btn-outline-secondary" (click)="downVotes(i)">{{quotes[i].downvotes}}
-            <span class="material-icons">
-              thumb_down
-            </span></button>&nbsp;
-                    <hr class="hr-light mb-5 mt-8" />
+                <div class="row">
+                    <div class="column-md-3">
+                        <button type="button" class="btn btn-outline-primary" (click)="upVotes(i)">{{quotes[i].upvotes}}
+              &nbsp;<span class="material-icons">
+                thumb_up
+              </span></button> &nbsp; &nbsp; &nbsp;
+                    </div>
+
+                    <div class="column-md-3">
+                        <button type="button" class="btn btn-outline-secondary" (click)="downVotes(i)">{{quotes[i].downvotes}}
+              <span class="material-icons">
+                thumb_down
+              </span></button>&nbsp;
+                        <hr class="hr-light mb-5 mt-8" />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-md-6 col-xl-5 offset-xl-1" style="position: absolute;top: 185px; right: 10px;">
-        <!--Form-->
-        <div class="card wow fadeInRight" data-wow-delay="0.3s">
-            <app-quote-form (submitQuote)="addNewQuote($event)"></app-quote-form>
+        <div class="col-md-6 col-xl-5 offset-xl-1" style="position: absolute;top: 185px; right: 10px; color: darkslategray;">
+            <!--Form-->
+
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+
+            <!--/.Form-->
         </div>
-        <!--/.Form-->
     </div>
 </div>

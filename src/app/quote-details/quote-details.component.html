@@ -1,16 +1,14 @@
-<div class="details">
+<div id="details">
 
-    <p>Author Name: {{quote.author}}</p>
-    <p>Quote: {{quote.quote}}</p>
-    <p>Publisher Name:{{quote.name}}</p>
-
-    <p>Entry Date:&nbsp; <span style="
+    <p>Author Name: &nbsp;{{quote.author}}</p>
+    <p>Publisher Name:&nbsp;{{quote.name}}</p>
+    <p>Date:&nbsp; <span style="
         display: inline;
         font-weight: bolder;
         color: darkmagenta;
         letter-spacing: 1px;
       ">
-      {{ quote.entryDate | date }}
+      {{ quote.entryDate|date }}
     </span> </p>
     <span style="color: cornflowerblue;"> This Quote was Posted {{quote.entryDate|dateCount}} days ago</span> &nbsp;
     <button type="button" class="btn btn-outline-danger" (click)='quoteDelete(true)'><span class="material-icons">

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Quotes } from '../quotes';
 
 @Component({
@@ -7,11 +7,7 @@ import { Quotes } from '../quotes';
   styleUrls: ['./quote.component.css'],
 })
 export class QuoteComponent implements OnInit {
-  @Input() quote: Quotes;
-
-  @Output() isComplete = new EventEmitter<boolean>();
-
-  quotes = [
+  quotes: Quotes[] = [
     new Quotes(
       'Martin Luther King jr',
       'The time is always right to do what is right.',
@@ -25,15 +21,6 @@ export class QuoteComponent implements OnInit {
       new Date(1989, 5, 10)
     ),
   ];
-  addNewQuote(quote) {
-    let quoteLength = this.quotes.length;
-    quote.id = quoteLength + 1;
-    quote.entryDate = new Date(quote.entryDate);
-    this.quotes.unshift(quote);
-  }
-  quoteDelete(complete: boolean) {
-    this.isComplete.emit(complete);
-  }
   delQuote(isComplete, i) {
     if (isComplete) {
       let toDelete = confirm(
@@ -48,6 +35,19 @@ export class QuoteComponent implements OnInit {
   upvotes = 0;
   downvotes = 0;
 
+  highestUpvote() {
+    this.prevNum = 0;
+    this.lastNum = 0;
+
+    for (this.counter = 0; this.counter < this.quotes.length; this.counter++) {
+      this.lastNum = this.quotes[this.counter].upvotes;
+      if (this.lastNum > this.prevNum) {
+        this.prevNum = this.lastNum;
+      }
+    }
+    return this.prevNum;
+  }
+
   upVotes(i) {
     this.quotes[i].upvotes += 1;
   }
@@ -60,17 +60,8 @@ export class QuoteComponent implements OnInit {
   lastNum: number;
   counter: number;
 
-  highestUpvote() {
-    this.prevNum = 0;
-    this.lastNum = 0;
-
-    for (this.counter = 0; this.counter < this.quotes.length; this.counter++) {
-      this.lastNum = this.quotes[this.counter].upvotes;
-      if (this.lastNum > this.prevNum) {
-        this.prevNum = this.lastNum;
-      }
-    }
-    return this.prevNum;
+  addNewQuote(quote) {
+    this.quotes.unshift(quote);
   }
 
   constructor() {}
