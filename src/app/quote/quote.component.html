@@ -1,44 +1,41 @@
-<div class="jumbotron">
+<div class="row1">
 
-    <div class="row1">
+    <div class="col-md-6">
+        <mat-card *ngFor="let quote of quotes; let i = index" style="font-size: medium;">
 
-        <div class="col-md-6">
-            <mat-card *ngFor="let quote of quotes; let i = index" style="font-size: medium;">
+            <p appHighlight *ngIf="highestUpvote() === quote.upvotes && quote.upvotes > 0">
+                <mat-card-header> {{quote.quote}}</mat-card-header>
+            </p>
+            <p *ngIf="highestUpvote() !== quote.upvotes || quote.upvotes === 0">
+                Quote : {{ quote.quote }}</p>
+            <mat-card-content>
+                <app-quote-details [quote]="quote" (isComplete)='delQuote($event,i)'>
+                </app-quote-details>
+            </mat-card-content>
+            <mat-card-footer>
+                <div class="row" style="margin-left: 0.3in;">
+                    <div class="column-md-3">
+                        <button type="button" class="btn btn-outline-primary" (click)="upVotes(i)">{{quotes[i].upvotes}}
+                  &nbsp;<span class="material-icons">
+                    thumb_up
+                  </span></button> &nbsp; &nbsp; &nbsp;
+                    </div>
 
-                <p appHighlight *ngIf="highestUpvote() === quote.upvotes && quote.upvotes > 0">
-                    <mat-card-header> {{quote.quote}}</mat-card-header>
-                </p>
-                <p *ngIf="highestUpvote() !== quote.upvotes || quote.upvotes === 0">
-                    Quote : {{ quote.quote }}</p>
-                <mat-card-content>
-                    <app-quote-details [quote]="quote" (isComplete)='delQuote($event,i)'>
-                    </app-quote-details>
-                </mat-card-content>
-                <mat-card-footer>
-                    <div class="row" style="margin-left: 0.3in;">
-                        <div class="column-md-3">
-                            <button type="button" class="btn btn-outline-primary" (click)="upVotes(i)">{{quotes[i].upvotes}}
-                &nbsp;<span class="material-icons">
-                  thumb_up
-                </span></button> &nbsp; &nbsp; &nbsp;
-                        </div>
+                    <div class="column-md-3">
+                        <button type="button" class="btn btn-outline-secondary" (click)="downVotes(i)">{{quotes[i].downvotes}}
+                  <span class="material-icons">
+                    thumb_down
+                  </span></button>
+                    </div>
+                </div>&nbsp;
+            </mat-card-footer>
+        </mat-card>
+    </div>
 
-                        <div class="column-md-3">
-                            <button type="button" class="btn btn-outline-secondary" (click)="downVotes(i)">{{quotes[i].downvotes}}
-                <span class="material-icons">
-                  thumb_down
-                </span></button>
-                        </div>
-                    </div>&nbsp;
-                </mat-card-footer>
-            </mat-card>
-        </div>
+    <div class="col-md-6 col-xl-5 offset-xl-1" style="position: absolute;top: 185px; right: 10px; color: darkslategray;">
+        <!--Form-->
 
-        <div class="col-md-6 col-xl-5 offset-xl-1" style="position: absolute;top: 185px; right: 10px; color: darkslategray;">
-            <!--Form-->
+        <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
 
-            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-
-            <!--/.Form-->
-        </div>
+        <!--/.Form-->
     </div>
