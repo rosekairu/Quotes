@@ -6,10 +6,10 @@
             <mat-card *ngFor="let quote of quotes; let i = index" style="font-size: medium;">
 
                 <p appHighlight *ngIf="highestUpvote() === quote.upvotes && quote.upvotes > 0">
-                    <mat-card-header> Quote : {{quote.quote}}</mat-card-header>
+                    <mat-card-header> {{quote.quote}}</mat-card-header>
                 </p>
                 <p *ngIf="highestUpvote() !== quote.upvotes || quote.upvotes === 0">
-                    {{ quote.quote }}</p>
+                    Quote : {{ quote.quote }}</p>
                 <mat-card-content>
                     <app-quote-details [quote]="quote" (isComplete)='delQuote($event,i)'>
                     </app-quote-details>
@@ -29,7 +29,7 @@
                   thumb_down
                 </span></button>
                         </div>
-                    </div>
+                    </div>&nbsp;
                 </mat-card-footer>
             </mat-card>
         </div>

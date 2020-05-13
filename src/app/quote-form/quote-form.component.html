@@ -20,7 +20,7 @@
             <span class="material-icons">
         format_quote
       </span>
-            <label for="quote">Quotes </label>
+            <label for="quote">Quote </label>
             <input type="text" id="quote" class="form-control" name="quote" [(ngModel)]="newQuote.quote" #quote="ngModel" required>
             <div [hidden]="quote.valid || quote.pristine" class="validations">
                 <p>A quote is required</p>
@@ -31,7 +31,7 @@
             <span class="material-icons">
         person_outline
       </span>
-            <label for="author">Author </label>
+            <label for="author">Author's Name </label>
             <input type="text" id="author" class="form-control" name="author" [(ngModel)]="newQuote.author" #author="ngModel" required>
             <div [hidden]="author.valid || author.pristine" class="validations">
                 <p>Author is required</p>

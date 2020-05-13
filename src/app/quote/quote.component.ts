@@ -20,7 +20,7 @@ export class QuoteComponent implements OnInit {
       'Winston Churchill',
       'Success is not final, failure is not fatal: it is the courage to continue that counts.',
       'Winston',
-      new Date(1989, 5, 10)
+      new Date(1999, 5, 10)
     ),
   ];
   delQuote(isComplete, i) {
