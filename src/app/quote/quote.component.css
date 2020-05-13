@@ -5,11 +5,11 @@
 }
 
 .row1 {
-    width: 50rem;
-    color: lightcyan;
+    width: 55rem;
+    color: cyan;
+    margin-bottom: 10px;
 }
 
-h3 {
-    color: greenyellow;
-    font-size: 27px;
+mat-card {
+    margin-bottom: 20px;
 }

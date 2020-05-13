@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-//import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +14,7 @@ import { HighlightDirective } from './highlight.directive';
 import { NavbarComponent } from './navbar/navbar.component';
 import { QuoteFormComponent } from './quote-form/quote-form.component';
 import { TimePassPipe } from './time-pass.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { TimeAgoPipe } from 'time-ago-pipe';
 
 @NgModule({
@@ -27,7 +29,14 @@ import { TimePassPipe } from './time-pass.pipe';
     TimePassPipe,
     //TimeAgoPipe,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
