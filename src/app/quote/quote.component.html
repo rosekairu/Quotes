@@ -8,7 +8,7 @@
                 <p appHighlight *ngIf="highestUpvote() === quote.upvotes && quote.upvotes > 0">
                     {{quote.quote}} </p>
                 <p *ngIf="highestUpvote() !== quote.upvotes || quote.upvotes === 0">
-                    {{ quote.quote }}</p>
+                    Quote : {{ quote.quote }}</p>
 
                 <app-quote-details [quote]="quote" (isComplete)='delQuote($event,i)'>
                 </app-quote-details>
